@@ -1,0 +1,82 @@
+/* Badge 컴포넌트 스타일 - Design Tokens 활용 */
+
+.ads-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ads-size-gap, 8px);
+  padding: var(--ads-size-padding-y-small, 6px) var(--ads-size-padding-x-small, 8px);
+  border-radius: var(--ads-size-corner, 8px);
+  
+  /* 타이포그래피 */
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+  font-weight: 500;
+  font-size: var(--ads-size-font-small, 14px);
+  line-height: 1.4;
+}
+
+/* Variant - Default */
+.ads-badge--default {
+  background-color: var(--ads-color-brand-tertiary, #eaeaff);
+  color: var(--ads-color-primary, rgba(0, 0, 0, 0.85));
+}
+
+/* Variant - Brand */
+.ads-badge--brand {
+  background-color: var(--ads-color-brand-primary, #5250f3);
+  color: var(--ads-color-on-brand, #ffffff);
+}
+
+/* Variant - Secondary */
+.ads-badge--secondary {
+  background-color: var(--ads-color-brand-secondary, #d1d0f9);
+  color: var(--ads-color-on-brand, #ffffff);
+}
+
+/* Variant - Success */
+.ads-badge--success {
+  background-color: var(--ads-color-success, #47fc74);
+  color: var(--ads-color-on-reverse, #1e1e1e);
+}
+
+/* Variant - Warning */
+.ads-badge--warning {
+  background-color: var(--ads-color-warning, #f8d33f);
+  color: var(--ads-color-on-reverse, #1e1e1e);
+}
+
+/* Variant - Danger */
+.ads-badge--danger {
+  background-color: var(--ads-color-danger, #cf2828);
+  color: var(--ads-color-on-reverse, #1e1e1e);
+}
+
+/* Label 스타일 */
+.ads-badge__label {
+  flex-shrink: 0;
+}
+
+/* Remove 버튼 스타일 */
+.ads-badge__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ads-badge__remove:hover {
+  opacity: 0.7;
+}
+
+.ads-badge__remove svg {
+  display: block;
+  width: 6px;
+  height: 6px;
+}

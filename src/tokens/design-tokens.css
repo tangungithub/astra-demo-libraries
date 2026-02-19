@@ -1,0 +1,87 @@
+/* Design Tokens from Figma - Juhan Demo */
+/* Generated: 2026-02-19 */
+
+:root {
+  /* Color Tokens - Primary */
+  --ads-color-primary: #000000d9;
+  --ads-color-secondary: #00000080;
+  --ads-color-tertiary: #0000004d;
+  
+  /* Color Tokens - Brand */
+  --ads-color-brand-primary: #5250f3;
+  --ads-color-brand-secondary: #d1d0f9;
+  --ads-color-brand-tertiary: #eaeaff;
+  
+  /* Color Tokens - Surface */
+  --ads-color-surface-bg: #ffffff;
+  --ads-color-surface-secondary-bg: #ffffff80;
+  --ads-color-input-bg: #0000000d;
+  
+  /* Color Tokens - Border */
+  --ads-color-border-primary: #00000026;
+  --ads-color-border-secondary: #0000000d;
+  --ads-color-border-selected: #5f5f5fcc;
+  
+  /* Color Tokens - Status */
+  --ads-color-success: #47fc74;
+  --ads-color-warning: #f8d33f;
+  --ads-color-danger: #cf2828;
+  
+  /* Color Tokens - Semantic */
+  --ads-color-on-brand: #ffffff;
+  --ads-color-on-reverse: #1e1e1e;
+  
+  /* Color Tokens - Primitive */
+  --ads-color-primitive-blurple-500: #d1d0f9;
+  --ads-color-primitive-orange-400: #f04919;
+  --ads-color-primitive-green-300: #157e50;
+  
+  /* Typography Tokens - Font Family */
+  --ads-font-family-text: "Instrument Sans";
+  
+  /* Typography Tokens - Font Size */
+  --ads-size-font-body: 16px;
+  --ads-size-font-small: 14px;
+  
+  /* Size Tokens - Icons */
+  --ads-size-icon: 24px;
+  --ads-size-icon-large: 32px;
+  --ads-size-icon-extra-large: 40px;
+  --ads-size-icon-stroke: 1.5px;
+  
+  /* Size Tokens - Spacing */
+  --ads-size-gap: 8px;
+  --ads-size-gap-large: 16px;
+  --ads-size-gap-xlarge: 24px;
+  
+  /* Size Tokens - Padding X */
+  --ads-size-padding-x: 12px;
+  --ads-size-padding-x-small: 8px;
+  --ads-size-padding-x-med: 16px;
+  --ads-size-padding-x-large: 24px;
+  
+  /* Size Tokens - Padding Y */
+  --ads-size-padding-y: 12px;
+  --ads-size-padding-y-small: 6px;
+  --ads-size-padding-y-med: 16px;
+  --ads-size-padding-y-large: 24px;
+  
+  /* Size Tokens - Corner Radius */
+  --ads-size-corner: 8px;
+  --ads-size-corner-small: 4px;
+  --ads-size-corner-full: 999px;
+  
+  /* Size Tokens - Border */
+  --ads-size-border: 1px;
+  
+  /* SDS System Tokens - Space */
+  --sds-size-space-200: 8px;
+  --sds-size-space-300: 12px;
+  --sds-size-space-400: 16px;
+  
+  /* SDS System Tokens - Typography */
+  --sds-typography-scale-06: 32px;
+  
+  /* SDS System Tokens - Stroke */
+  --sds-size-stroke-border: 1px;
+}

@@ -1,38 +1,105 @@
-.App {
+/* Astra Design System Demo App */
+
+.app {
+  min-height: 100vh;
+  background-color: var(--ads-color-surface-bg, #ffffff);
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+}
+
+.app-header {
+  background: linear-gradient(135deg, var(--ads-color-brand-primary, #5250f3) 0%, var(--ads-color-brand-secondary, #d1d0f9) 100%);
+  color: var(--ads-color-on-brand, #ffffff);
+  padding: 60px 24px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header h1 {
+  margin: 0 0 12px 0;
+  font-size: 48px;
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-header p {
+  margin: 0;
+  font-size: 18px;
+  opacity: 0.9;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.component-section {
+  margin-bottom: 60px;
+  padding: 32px;
+  background-color: var(--ads-color-surface-bg, #ffffff);
+  border: var(--ads-size-border, 1px) solid var(--ads-color-border-primary, rgba(0, 0, 0, 0.15));
+  border-radius: var(--ads-size-corner, 8px);
+}
+
+.component-section h2 {
+  margin: 0 0 24px 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ads-color-primary, rgba(0, 0, 0, 0.85));
+  border-bottom: 2px solid var(--ads-color-brand-primary, #5250f3);
+  padding-bottom: 12px;
+}
+
+.demo-group {
+  margin-bottom: 32px;
+}
+
+.demo-group:last-child {
+  margin-bottom: 0;
+}
+
+.demo-group h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ads-color-secondary, rgba(0, 0, 0, 0.5));
+}
+
+.demo-row {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--ads-size-gap-large, 16px);
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.demo-row:last-child {
+  margin-bottom: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.token-list {
+  margin: 16px 0;
+  padding-left: 24px;
+  line-height: 1.8;
+}
+
+.token-list li {
+  margin-bottom: 8px;
+  color: var(--ads-color-primary, rgba(0, 0, 0, 0.85));
+}
+
+.token-list code {
+  background-color: var(--ads-color-brand-tertiary, #eaeaff);
+  color: var(--ads-color-brand-primary, #5250f3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+}
+
+code {
+  background-color: var(--ads-color-brand-tertiary, #eaeaff);
+  color: var(--ads-color-brand-primary, #5250f3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
 }

@@ -1,0 +1,109 @@
+/* Button 컴포넌트 스타일 - Design Tokens 활용 */
+
+.ads-button {
+  /* 기본 레이아웃 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ads-size-gap, 8px);
+  
+  /* 타이포그래피 */
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+  font-weight: 400;
+  line-height: 1;
+  
+  /* 기타 */
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Size Variants */
+.ads-button--medium {
+  padding: 10px var(--ads-size-padding-y-med, 16px);
+  font-size: 16px;
+  border-radius: var(--ads-size-corner-full, 999px);
+}
+
+.ads-button--small {
+  padding: 6px var(--ads-size-padding-x, 12px);
+  font-size: 14px;
+  border-radius: var(--ads-size-corner-full, 999px);
+}
+
+/* Primary Variant */
+.ads-button--primary {
+  background-color: var(--ads-color-brand-primary, #5250f3);
+  color: var(--ads-color-on-brand, #ffffff);
+}
+
+.ads-button--primary:hover,
+.ads-button--primary.ads-button--hover {
+  background-color: var(--ads-color-brand-secondary, #d1d0f9);
+}
+
+.ads-button--primary:disabled,
+.ads-button--primary.ads-button--disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Neutral Variant */
+.ads-button--neutral {
+  background-color: transparent;
+  color: var(--ads-color-brand-primary, #5250f3);
+  border: var(--ads-size-border, 1px) solid var(--ads-color-brand-primary, #5250f3);
+}
+
+.ads-button--neutral:hover,
+.ads-button--neutral.ads-button--hover {
+  border-color: var(--ads-color-brand-secondary, #d1d0f9);
+  color: var(--ads-color-brand-secondary, #d1d0f9);
+}
+
+.ads-button--neutral:disabled,
+.ads-button--neutral.ads-button--disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Subtle Variant */
+.ads-button--subtle {
+  background-color: transparent;
+  color: var(--ads-color-brand-primary, #5250f3);
+}
+
+.ads-button--subtle:hover,
+.ads-button--subtle.ads-button--hover {
+  background-color: var(--ads-color-brand-tertiary, #eaeaff);
+}
+
+.ads-button--subtle:disabled,
+.ads-button--subtle.ads-button--disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Icon 스타일 */
+.ads-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ads-button--medium .ads-button__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.ads-button--small .ads-button__icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Label 스타일 */
+.ads-button__label {
+  flex-shrink: 0;
+}
