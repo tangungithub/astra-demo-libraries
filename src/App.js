@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputField, Badge } from './components';
+import { Button, InputField, SelectField, Badge, SidebarNavigation } from './components';
 import './tokens/design-tokens.css';
 import './App.css';
 
@@ -8,6 +8,8 @@ import './App.css';
  */
 function App() {
   const [inputValue, setInputValue] = useState('');
+  const [selectValue, setSelectValue] = useState('');
+  const [selectedNav, setSelectedNav] = useState('film');
 
   return (
     <div className="app">
@@ -96,6 +98,51 @@ function App() {
           </div>
         </section>
 
+        {/* SelectField 컴포넌트 */}
+        <section className="component-section">
+          <h2>SelectField 컴포넌트</h2>
+          
+          <div className="demo-group">
+            <h3>기본 Select</h3>
+            <SelectField
+              label="국가 선택"
+              value={selectValue}
+              placeholder="국가를 선택하세요"
+              description="거주 중인 국가를 선택해주세요"
+              options={[
+                { label: '대한민국', value: 'kr' },
+                { label: '미국', value: 'us' },
+                { label: '일본', value: 'jp' },
+                { label: '중국', value: 'cn' },
+              ]}
+              onChange={(e) => setSelectValue(e.target.value)}
+            />
+          </div>
+
+          <div className="demo-group">
+            <h3>Label 없는 Select</h3>
+            <SelectField
+              showLabel={false}
+              value=""
+              placeholder="옵션 선택"
+              hasDescription={false}
+              options={['옵션 1', '옵션 2', '옵션 3']}
+            />
+          </div>
+
+          <div className="demo-group">
+            <h3>Description 없는 Select</h3>
+            <SelectField
+              label="카테고리"
+              value=""
+              placeholder="카테고리 선택"
+              hasDescription={false}
+              options={['개발', '디자인', '마케팅', 'PM']}
+            />
+          </div>
+        </section>
+
+        {/* 
         {/* Badge 컴포넌트 */}
         <section className="component-section">
           <h2>Badge 컴포넌트</h2>
@@ -133,7 +180,39 @@ function App() {
             </div>
           </div>
         </section>
+        {/* SidebarNavigation 컴포넌트 */}
+        <section className="component-section">
+          <h2>SidebarNavigation 컴포넌트</h2>
+          
+          <div className="demo-group">
+            <h3>세로형 네비게이션</h3>
+            <div className="demo-row" style={{ height: '900px', gap: '24px' }}>
+              <SidebarNavigation 
+                selectedItem={selectedNav}
+                onNavigate={(itemId) => {
+                  setSelectedNav(itemId);
+                  console.log('Navigate to:', itemId);
+                }}
+                userName="Admin"
+              />
+              <SidebarNavigation 
+                selectedItem="home"
+                userName="Guest"
+              />
+              <SidebarNavigation 
+                selectedItem="folder"
+                userName="Dev"
+                userAvatar="https://i.pravatar.cc/32"
+              />
+            </div>
+          </div>
 
+          <div className="demo-group">
+            <h3>인터랙티브 예시</h3>
+            <p>현재 선택된 메뉴: <strong>{selectedNav}</strong></p>
+            <p>좌측 사이드바의 아이콘을 클릭해보세요!</p>
+          </div>
+        </section>
         {/* Design Tokens 정보 */}
         <section className="component-section">
           <h2>Design Tokens</h2>

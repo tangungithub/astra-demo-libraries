@@ -1,0 +1,96 @@
+/* SelectField 컴포넌트 스타일 - Design Tokens 활용 */
+
+.ads-select-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ads-size-gap, 8px);
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Label 스타일 */
+.ads-select-field__label {
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+  font-weight: 500;
+  font-size: var(--ads-size-font-body, 16px);
+  line-height: 1.4;
+  color: var(--ads-color-primary, rgba(0, 0, 0, 0.85));
+  margin: 0;
+}
+
+/* Select Wrapper */
+.ads-select-field__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Select 스타일 */
+.ads-select-field__select {
+  width: 100%;
+  padding: var(--ads-size-padding-y, 12px) var(--ads-size-padding-x, 12px);
+  padding-right: 36px; /* 드롭다운 아이콘 공간 확보 */
+  background-color: var(--ads-color-input-bg, rgba(0, 0, 0, 0.05));
+  border: none;
+  border-radius: var(--ads-size-corner, 8px);
+  
+  /* 타이포그래피 */
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+  font-weight: 400;
+  font-size: var(--ads-size-font-body, 16px);
+  line-height: 1.4;
+  color: var(--ads-color-primary, rgba(0, 0, 0, 0.85));
+  
+  /* 기본 화살표 제거 */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  /* 기타 */
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ads-select-field__select:focus {
+  background-color: var(--ads-color-input-bg, rgba(0, 0, 0, 0.08));
+}
+
+/* Empty state */
+.ads-select-field__select--empty {
+  color: var(--ads-color-secondary, rgba(0, 0, 0, 0.5));
+}
+
+.ads-select-field__select option {
+  color: var(--ads-color-primary, rgba(0, 0, 0, 0.85));
+}
+
+.ads-select-field__select option:disabled {
+  color: var(--ads-color-secondary, rgba(0, 0, 0, 0.5));
+}
+
+/* 드롭다운 아이콘 */
+.ads-select-field__icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ads-color-secondary, rgba(0, 0, 0, 0.5));
+}
+
+.ads-select-field__icon svg {
+  display: block;
+}
+
+/* Description 스타일 */
+.ads-select-field__description {
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+  font-weight: 500;
+  font-size: var(--ads-size-font-body, 16px);
+  line-height: 1.4;
+  color: var(--ads-color-secondary, rgba(0, 0, 0, 0.5));
+  margin: 0;
+}
