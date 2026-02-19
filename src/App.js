@@ -22,7 +22,8 @@ function App() {
         {/* Button 컴포넌트 */}
         <section className="component-section">
           <h2>Button 컴포넌트</h2>
-          
+          <SidebarNavigation />
+
           <div className="demo-group">
             <h3>Primary Variant</h3>
             <div className="demo-row">
