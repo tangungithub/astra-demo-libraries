@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputField, SelectField, Badge, SidebarNavigation } from './components';
+import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles } from './components';
 import './tokens/design-tokens.css';
 import './App.css';
 
@@ -212,6 +212,39 @@ function App() {
             <h3>인터랙티브 예시</h3>
             <p>현재 선택된 메뉴: <strong>{selectedNav}</strong></p>
             <p>좌측 사이드바의 아이콘을 클릭해보세요!</p>
+          </div>
+        </section>
+
+        {/* Bubbles 컴포넌트 */}
+        <section className="component-section">
+          <h2>Bubbles 컴포넌트</h2>
+          
+          <div className="demo-group">
+            <h3>AI 채팅 버블</h3>
+            <div className="demo-row" style={{ flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
+              <Bubbles type="ai" />
+              <Bubbles type="ai" message="여기 당신이 요청한 정보가 있어요." />
+              <Bubbles type="ai" message="어떻게 도와드릴까요?" />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>User 채팅 버블</h3>
+            <div className="demo-row" style={{ flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
+              <Bubbles type="user" />
+              <Bubbles type="user" message="이 기능을 어떻게 사용하나요?" />
+              <Bubbles type="user" message="버튼을 만들어줄 수 있나요?" />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>대화형 예시</h3>
+            <div className="demo-row" style={{ flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
+              <Bubbles type="ai" message="안녕하세요! 무엇을 도와드릴까요?" />
+              <Bubbles type="user" message="React 컴포넌트를 만들고 싶어요." />
+              <Bubbles type="ai" message="좋아요! 어떤 컴포넌트를 만들고 싶으신가요?" />
+              <Bubbles type="user" message="시작하기 버튼이 필요해요." />
+            </div>
           </div>
         </section>
         {/* Design Tokens 정보 */}

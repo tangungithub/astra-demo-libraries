@@ -1,0 +1,129 @@
+/* Bubbles 컴포넌트 스타일 - Design Tokens 활용 */
+
+.ads-bubbles {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 348px;
+  position: relative;
+}
+
+/* AI 타입: 오른쪽 패딩 */
+.ads-bubbles--ai {
+  padding-right: 32px;
+}
+
+/* User 타입: 왼쪽 패딩 */
+.ads-bubbles--user {
+  padding-left: 32px;
+}
+
+/* 아바타 컨테이너 */
+.ads-bubbles__avatar-container {
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
+  flex-shrink: 0;
+}
+
+/* 아바타 */
+.ads-bubbles__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.ads-bubbles__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* AI 아바타 (사각형 로고) */
+.ads-bubbles__avatar--ai img {
+  object-fit: contain;
+}
+
+/* User 아바타 (원형 프로필) */
+.ads-bubbles__avatar--user {
+  border-radius: var(--ads-size-corner-full, 999px);
+  border: var(--ads-size-border, 1px) solid var(--ads-color-border-primary, rgba(0, 0, 0, 0.15));
+  overflow: hidden;
+}
+
+.ads-bubbles__avatar--user img {
+  object-fit: cover;
+}
+
+/* 메시지 영역 */
+.ads-bubbles__comment {
+  display: flex;
+  flex: 1 0 0;
+  align-items: flex-start;
+  min-height: 1px;
+  min-width: 1px;
+  padding: 12px 16px;
+  border-radius: var(--ads-size-corner, 8px);
+  border: var(--ads-size-border, 1px) solid var(--ads-color-border-secondary, rgba(0, 0, 0, 0.05));
+  position: relative;
+}
+
+/* AI 메시지: 보라색 배경 */
+.ads-bubbles--ai .ads-bubbles__comment {
+  background-color: var(--ads-color-brand-secondary, #d1d0f9);
+}
+
+/* User 메시지: 흰색 배경 */
+.ads-bubbles--user .ads-bubbles__comment {
+  background-color: var(--ads-color-surface-bg, #ffffff);
+}
+
+/* 슬롯 영역 */
+.ads-bubbles__slot {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 1px;
+  min-width: 1px;
+  position: relative;
+}
+
+.ads-bubbles--user .ads-bubbles__slot {
+  flex-direction: column;
+}
+
+/* 텍스트 */
+.ads-bubbles__text {
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ads-color-primary, rgba(0, 0, 0, 0.85));
+  white-space: pre-wrap;
+  margin: 0;
+  position: relative;
+}
+
+.ads-bubbles--ai .ads-bubbles__text {
+  flex: 1 0 0;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+.ads-bubbles--user .ads-bubbles__text {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .ads-bubbles {
+    max-width: 100%;
+    width: auto;
+  }
+}
