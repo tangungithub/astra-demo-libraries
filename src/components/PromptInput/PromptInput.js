@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FloatingAction from '../FloatingAction';
 import './PromptInput.css';
 
 // 이미지 자산 (localhost 서버)
-const imgSendButtonBg = "http://localhost:3845/assets/02d24f24279dfd7dbb40dbc82d233d14723e84ff.svg";
-const imgIconSend = "http://localhost:3845/assets/7b1db22086ea6aeb39577779955e7d97080d010e.svg";
 const imgIconPaperclip = "http://localhost:3845/assets/f0be2574e502f2c1f3567fae8c6564c22b2e4e69.svg";
 
 /**
@@ -41,19 +40,8 @@ const PromptInput = ({
         onChange={(e) => onChange && onChange(e.target.value)}
       />
 
-      {/* 전송 버튼 (우측 하단) */}
-      <button
-        className="ads-prompt-input__send-button"
-        onClick={handleSendClick}
-        aria-label="Send message"
-      >
-        <div className="ads-prompt-input__send-bg">
-          <img src={imgSendButtonBg} alt="" />
-        </div>
-        <div className="ads-prompt-input__send-icon">
-          <img src={imgIconSend} alt="Send" />
-        </div>
-      </button>
+      {/* 전송 버튼 (우측 하단) - FloatingAction 컴포넌트 활용 */}
+      <FloatingAction onClick={handleSendClick} size={24} className="ads-prompt-input__send-button" />
 
       {/* 첨부 버튼 (좌측 하단) */}
       <button

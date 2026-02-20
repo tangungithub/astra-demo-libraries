@@ -64,6 +64,86 @@ Figma: "Header-Main" → 코드: HeaderMain.js
 - CSS: `src/tokens/design-tokens.css`
 - JavaScript: `src/tokens/design-tokens.js`
 
+### 3. Code Connect 활용 규칙 (MANDATORY)
+
+**하위 요소에 Code Connect가 연결된 컴포넌트가 있다면, 반드시 해당 컴포넌트를 활용해야 합니다.**
+
+Figma MCP에서 반환하는 코드에 `<CodeConnectSnippet>` 요소가 포함된 경우:
+
+#### ✅ 올바른 방법
+```javascript
+// MCP 응답에서 CodeConnectSnippet 발견:
+// <CodeConnectSnippet data-node-id="15:813">
+//   <IconSend size="24" />
+// </CodeConnectSnippet>
+
+// 프로젝트에서 해당 컴포넌트를 찾아 사용
+import IconSend from './icons/IconSend';
+
+const FloatingAction = () => (
+  <div>
+    <IconSend size={24} />  {/* Code Connect된 컴포넌트 활용 */}
+  </div>
+);
+```
+
+#### ❌ 금지사항
+```javascript
+// 잘못된 예 - Code Connect 무시하고 새로 구현
+const FloatingAction = () => (
+  <div>
+    <svg>...</svg>  {/* ❌ 이미 연결된 컴포넌트 무시 */}
+  </div>
+);
+```
+
+**처리 절차:**
+1. MCP 응답에서 `CodeConnectSnippet` 확인
+2. import 경로에서 컴포넌트 위치 파악
+3. 프로젝트 내에서 해당 컴포넌트 검색
+4. 찾은 컴포넌트를 그대로 사용 (재구현 금지)
+
+### 4. Figma 정의 범위 준수 규칙 (MANDATORY)
+
+**Figma에서 정의되지 않은 기능이나 동작을 임의로 추가하지 않습니다.**
+
+#### ✅ 올바른 방법
+```javascript
+// Figma에 정의된 variant만 구현
+const Button = ({ variant = 'Primary' }) => {
+  // Primary, Neutral, Subtle만 Figma에 정의됨
+  return <button className={`ads-button--${variant}`}>Button</button>;
+};
+
+Button.propTypes = {
+  variant: PropTypes.oneOf(['Primary', 'Neutral', 'Subtle']), // Figma 정의 그대로
+};
+```
+
+#### ❌ 금지사항
+```javascript
+// 잘못된 예 - Figma에 없는 기능 임의 추가
+const Button = ({ 
+  variant = 'Primary',
+  loading = false,  // ❌ Figma에 정의되지 않음
+  fullWidth = false,  // ❌ Figma에 정의되지 않음
+}) => {
+  if (loading) return <Spinner />;  // ❌ 추측성 구현
+  // ...
+};
+```
+
+**준수 사항:**
+- Figma variant만 props로 구현
+- Figma에 없는 상태(loading, error 등) 추가 금지
+- Figma에 없는 레이아웃 옵션(fullWidth, compact 등) 추가 금지
+- 추측성 인터랙션 구현 금지
+
+**예외:**
+- 기본적인 접근성 속성 (aria-label, role 등)은 허용
+- 이벤트 핸들러 props (onClick, onChange 등)는 허용
+- className prop은 확장성을 위해 허용
+
 ---
 
 ## 📁 Design System Structure
@@ -388,6 +468,8 @@ ComponentName.propTypes = {
 ### 필수 체크
 - [ ] **파일명이 Figma 컴포넌트명과 정확히 일치하는가?**
 - [ ] **모든 Figma variable을 CSS 변수로 사용하는가?**
+- [ ] **Code Connect된 하위 컴포넌트를 활용하는가?**
+- [ ] **Figma에 정의되지 않은 기능을 추가하지 않았는가?**
 - [ ] Props가 Figma variant와 일치하는가?
 - [ ] PropTypes가 정의되어 있는가?
 - [ ] Variable에 fallback 값이 포함되어 있는가?
@@ -538,6 +620,33 @@ Button.propTypes = {
 };
 ```
 
+5. **Code Connect 무시**
+```javascript
+// ❌ Code Connect된 컴포넌트 무시
+const Card = () => (
+  <div>
+    <svg>...</svg>  {/* 새로 구현 */}
+  </div>
+);
+
+// ✅ Code Connect 활용
+import IconArrow from './icons/IconArrow';
+const Card = () => (
+  <div>
+    <IconArrow />  {/* 기존 컴포넌트 사용 */}
+  </div>
+);
+```
+
+6. **Figma에 없는 기능 추가**
+```javascript
+// ❌ 추측성 기능 구현
+<Button loading={true} fullWidth />
+
+// ✅ Figma 정의 범위만 구현
+<Button variant="Primary" size="Medium" />
+```
+
 ---
 
 ## 📚 References
@@ -560,5 +669,5 @@ Design Tokens 업데이트 시:
 
 ---
 
-**마지막 업데이트:** 2026-02-19  
+**마지막 업데이트:** 2026-02-20  
 **프로젝트:** Astra Design System Component Library
