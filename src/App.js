@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles, PromptInput, FloatingAction, Avatar } from './components';
+import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles, PromptInput, FloatingAction, Avatar, MainPane } from './components';
 import './tokens/design-tokens.css';
 import './App.css';
 
@@ -384,6 +384,41 @@ function App() {
               <Avatar type="Initial" shape="Square" initials="N" />
             </div>
             <p>주의: 이니셜은 단일 문자(A, B, C)만 사용해야 합니다.</p>
+          </div>
+        </section>
+
+        {/* MainPane 컴포넌트 */}
+        <section className="component-section">
+          <h2>MainPane 컴포넌트</h2>
+          
+          <div className="demo-group">
+            <h3>기본 메인 패널</h3>
+            <div className="demo-row" style={{ gap: '24px', alignItems: 'flex-start' }}>
+              <MainPane />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>커스텀 채팅 내용</h3>
+            <div className="demo-row" style={{ gap: '24px', alignItems: 'flex-start' }}>
+              <MainPane>
+                <Bubbles type="ai" message="안녕하세요! 무엇을 도와드릴까요?" />
+                <Bubbles type="user" message="React 컴포넌트를 만들고 싶어요." />
+                <Bubbles type="ai" message="좋아요! 어떤 컴포넌트를 만들고 싶으신가요?" />
+                <Bubbles type="user" message="버튼 컴포넌트가 필요해요." />
+                <Bubbles type="ai" message="버튼 컴포넌트를 만들어드리겠습니다!" />
+              </MainPane>
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>설명</h3>
+            <p>MainPane은 채팅 인터페이스의 메인 패널로, 채팅 메시지 영역과 프롬프트 입력 영역을 포함합니다.</p>
+            <ul>
+              <li><strong>children</strong>: 커스텀 채팅 콘텐츠 (기본값: AI/User 예시 메시지)</li>
+              <li><strong>채팅 영역</strong>: 자동 스크롤 가능</li>
+              <li><strong>입력 영역</strong>: PromptInput 컴포넌트 포함</li>
+            </ul>
           </div>
         </section>
 
