@@ -232,9 +232,15 @@ function App() {
           <div className="demo-group">
             <h3>User 채팅 버블</h3>
             <div className="demo-row" style={{ flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
-              <Bubbles type="user" />
-              <Bubbles type="user" message="이 기능을 어떻게 사용하나요?" />
-              <Bubbles type="user" message="버튼을 만들어줄 수 있나요?" />
+              <Bubbles type="user">
+                <Avatar initials="F" type="Image" size="Small" shape="Circle" />
+              </Bubbles>
+              <Bubbles type="user" message="이 기능을 어떻게 사용하나요?">
+                <Avatar initials="F" type="Image" size="Small" shape="Circle" />
+              </Bubbles>
+              <Bubbles type="user" message="버튼을 만들어줄 수 있나요?">
+                <Avatar initials="F" type="Image" size="Small" shape="Circle" />
+              </Bubbles>
             </div>
           </div>
 
@@ -242,9 +248,13 @@ function App() {
             <h3>대화형 예시</h3>
             <div className="demo-row" style={{ flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
               <Bubbles type="ai" message="안녕하세요! 무엇을 도와드릴까요?" />
-              <Bubbles type="user" message="React 컴포넌트를 만들고 싶어요." />
+              <Bubbles type="user" message="React 컴포넌트를 만들고 싶어요.">
+                <Avatar initials="F" type="Image" size="Small" shape="Circle" />
+              </Bubbles>
               <Bubbles type="ai" message="좋아요! 어떤 컴포넌트를 만들고 싶으신가요?" />
-              <Bubbles type="user" message="시작하기 버튼이 필요해요." />
+              <Bubbles type="user" message="시작하기 버튼이 필요해요.">
+                <Avatar initials="F" type="Image" size="Small" shape="Circle" />
+              </Bubbles>
             </div>
           </div>
         </section>
@@ -403,9 +413,13 @@ function App() {
             <div className="demo-row" style={{ gap: '24px', alignItems: 'flex-start' }}>
               <MainPane>
                 <Bubbles type="ai" message="안녕하세요! 무엇을 도와드릴까요?" />
-                <Bubbles type="user" message="React 컴포넌트를 만들고 싶어요." />
+                <Bubbles type="user" message="React 컴포넌트를 만들고 싶어요.">
+                  <Avatar initials="F" type="Image" size="Small" shape="Circle" />
+                </Bubbles>
                 <Bubbles type="ai" message="좋아요! 어떤 컴포넌트를 만들고 싶으신가요?" />
-                <Bubbles type="user" message="버튼 컴포넌트가 필요해요." />
+                <Bubbles type="user" message="버튼 컴포넌트가 필요해요.">
+                  <Avatar initials="F" type="Image" size="Small" shape="Circle" />
+                </Bubbles>
                 <Bubbles type="ai" message="버튼 컴포넌트를 만들어드리겠습니다!" />
               </MainPane>
             </div>

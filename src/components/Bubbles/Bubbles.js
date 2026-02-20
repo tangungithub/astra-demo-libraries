@@ -14,6 +14,7 @@ const Bubbles = ({
   type = 'ai',
   message = '',
   avatarSrc = null,
+  children = null,
   className = '',
 }) => {
   const isAi = type === 'ai';
@@ -25,6 +26,9 @@ const Bubbles = ({
 
   // 기본 아바타 설정
   const avatarImage = avatarSrc || (isUser ? imgUserAvatar : imgAstraLogo);
+
+  // User 버블의 경우 children으로 Avatar 컴포넌트를 받을 수 있음 (Code Connect)
+  const userAvatar = isUser && children ? children : null;
 
   return (
     <div className={`ads-bubbles ads-bubbles--${type} ${className}`}>
@@ -47,9 +51,13 @@ const Bubbles = ({
       {/* User 버블: 오른쪽 아바타 */}
       {isUser && (
         <div className="ads-bubbles__avatar-container">
-          <div className="ads-bubbles__avatar ads-bubbles__avatar--user">
-            <img src={avatarImage} alt="User" />
-          </div>
+          {userAvatar ? (
+            userAvatar
+          ) : (
+            <div className="ads-bubbles__avatar ads-bubbles__avatar--user">
+              <img src={avatarImage} alt="User" />
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -60,6 +68,7 @@ Bubbles.propTypes = {
   type: PropTypes.oneOf(['ai', 'user']),
   message: PropTypes.string,
   avatarSrc: PropTypes.string,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 

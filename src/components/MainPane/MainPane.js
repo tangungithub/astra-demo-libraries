@@ -20,7 +20,9 @@ const MainPane = ({
         {children || (
           <>
             <Bubbles type="ai" message="How can i help you?" />
-            <Bubbles type="user" message="Can you do x?" />
+            <Bubbles type="user" message="Can you do x?">
+              <Avatar initials="F" type="Image" size="Small" shape="Circle" />
+            </Bubbles>
           </>
         )}
       </div>
