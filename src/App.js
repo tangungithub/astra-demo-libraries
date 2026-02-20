@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles, PromptInput, FloatingAction } from './components';
+import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles, PromptInput, FloatingAction, Avatar } from './components';
 import './tokens/design-tokens.css';
 import './App.css';
 
@@ -322,6 +322,68 @@ function App() {
               />
             </div>
             <p>버튼을 클릭하면 메시지가 전송됩니다.</p>
+          </div>
+        </section>
+
+        {/* Avatar 컴포넌트 */}
+        <section className="component-section">
+          <h2>Avatar 컴포넌트</h2>
+          
+          <div className="demo-group">
+            <h3>Image Type - Circle</h3>
+            <div className="demo-row">
+              <Avatar type="Image" shape="Circle" size="Large" />
+              <Avatar type="Image" shape="Circle" size="Medium" />
+              <Avatar type="Image" shape="Circle" size="Small" />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>Image Type - Square</h3>
+            <div className="demo-row">
+              <Avatar type="Image" shape="Square" size="Large" />
+              <Avatar type="Image" shape="Square" size="Medium" />
+              <Avatar type="Image" shape="Square" size="Small" />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>Initial Type - Circle</h3>
+            <div className="demo-row">
+              <Avatar type="Initial" shape="Circle" size="Large" initials="F" />
+              <Avatar type="Initial" shape="Circle" size="Medium" initials="A" />
+              <Avatar type="Initial" shape="Circle" size="Small" initials="B" />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>Initial Type - Square</h3>
+            <div className="demo-row">
+              <Avatar type="Initial" shape="Square" size="Large" initials="F" />
+              <Avatar type="Initial" shape="Square" size="Medium" initials="C" />
+              <Avatar type="Initial" shape="Square" size="Small" initials="D" />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>커스텀 이미지</h3>
+            <div className="demo-row">
+              <Avatar type="Image" shape="Circle" size="Large" imageSrc="https://i.pravatar.cc/40" />
+              <Avatar type="Image" shape="Circle" size="Medium" imageSrc="https://i.pravatar.cc/32" />
+              <Avatar type="Image" shape="Square" size="Large" imageSrc="https://i.pravatar.cc/40?img=12" />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>다양한 이니셜</h3>
+            <div className="demo-row">
+              <Avatar type="Initial" shape="Circle" initials="J" />
+              <Avatar type="Initial" shape="Circle" initials="K" />
+              <Avatar type="Initial" shape="Circle" initials="L" />
+              <Avatar type="Initial" shape="Square" initials="M" />
+              <Avatar type="Initial" shape="Square" initials="N" />
+            </div>
+            <p>주의: 이니셜은 단일 문자(A, B, C)만 사용해야 합니다.</p>
           </div>
         </section>
 

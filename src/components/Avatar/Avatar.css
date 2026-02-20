@@ -1,0 +1,108 @@
+/* Avatar 컴포넌트 스타일 - Design Tokens 활용 */
+
+.ads-avatar {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Shape variants */
+.ads-avatar--circle {
+  border-radius: var(--ads-size-corner-full, 999px);
+}
+
+.ads-avatar--square {
+  border-radius: var(--ads-size-corner, 8px);
+}
+
+/* Size variants */
+.ads-avatar--large {
+  width: var(--ads-size-icon-extra-large, 40px);
+  height: var(--ads-size-icon-extra-large, 40px);
+}
+
+.ads-avatar--medium {
+  width: var(--ads-size-icon-large, 32px);
+  height: var(--ads-size-icon-large, 32px);
+}
+
+.ads-avatar--small {
+  width: var(--ads-size-icon, 24px);
+  height: var(--ads-size-icon, 24px);
+}
+
+/* Type: Initial */
+.ads-avatar--initial {
+  background-color: var(--ads-color-brand-primary, #5250f3);
+}
+
+.ads-avatar__initials {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ads-avatar__text {
+  margin: 0;
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+  font-size: var(--ads-size-font-small, 14px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ads-color-on-brand, #ffffff);
+}
+
+/* Type: Image */
+.ads-avatar--image {
+  border: var(--ads-size-border, 1px) solid var(--ads-color-border-primary, rgba(0, 0, 0, 0.15));
+}
+
+.ads-avatar__image-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+.ads-avatar--image.ads-avatar--large .ads-avatar__image-wrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.ads-avatar--image.ads-avatar--medium .ads-avatar__image-wrapper {
+  width: 32px;
+  height: 32px;
+}
+
+.ads-avatar--image.ads-avatar--small .ads-avatar__image-wrapper {
+  width: 24px;
+  height: 24px;
+}
+
+.ads-avatar__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  max-width: none;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .ads-avatar--large {
+    width: var(--ads-size-icon-large, 32px);
+    height: var(--ads-size-icon-large, 32px);
+  }
+}

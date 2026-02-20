@@ -7,3 +7,4 @@ export { default as SidebarNavigation } from './SidebarNavigation';
 export { default as Bubbles } from './Bubbles';
 export { default as PromptInput } from './PromptInput';
 export { default as FloatingAction } from './FloatingAction';
+export { default as Avatar } from './Avatar';
