@@ -20,7 +20,7 @@ const Bubbles = ({
   const isUser = type === 'user';
 
   // 기본 메시지 설정
-  const defaultMessage = isUser ? 'Can you do x?' : 'How can I help?';
+  const defaultMessage = 'Example';
   const displayMessage = message || defaultMessage;
 
   // 기본 아바타 설정
