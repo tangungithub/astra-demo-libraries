@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles } from './components';
+import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles, PromptInput } from './components';
 import './tokens/design-tokens.css';
 import './App.css';
 
@@ -10,6 +10,7 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
   const [selectedNav, setSelectedNav] = useState('film');
+  const [promptValue, setPromptValue] = useState('');
 
   return (
     <div className="app">
@@ -247,6 +248,48 @@ function App() {
             </div>
           </div>
         </section>
+
+        {/* PromptInput 컴포넌트 */}
+        <section className="component-section">
+          <h2>PromptInput 컴포넌트</h2>
+          
+          <div className="demo-group">
+            <h3>기본 프롬프트 입력</h3>
+            <div className="demo-row" style={{ flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
+              <PromptInput
+                value={promptValue}
+                onChange={(value) => setPromptValue(value)}
+                onSend={(value) => {
+                  console.log('Send:', value);
+                  alert(`메시지 전송: ${value}`);
+                }}
+                onAttach={() => {
+                  console.log('Attach file');
+                  alert('파일 첨부 기능');
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>커스텀 플레이스홀더</h3>
+            <div className="demo-row" style={{ flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
+              <PromptInput
+                placeholder="메시지를 입력하세요..."
+              />
+              <PromptInput
+                placeholder="질문을 작성해주세요"
+              />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>인터랙티브 예시</h3>
+            <p>현재 입력된 텍스트: <strong>{promptValue || '(비어있음)'}</strong></p>
+            <p>전송 버튼(우측)과 첨부 버튼(좌측)을 클릭해보세요!</p>
+          </div>
+        </section>
+
         {/* Design Tokens 정보 */}
         <section className="component-section">
           <h2>Design Tokens</h2>

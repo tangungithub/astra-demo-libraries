@@ -1,0 +1,129 @@
+/* PromptInput 컴포넌트 스타일 - Design Tokens 활용 */
+
+.ads-prompt-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 382px;
+  height: 135px;
+  padding: var(--ads-size-padding-y, 12px) var(--ads-size-padding-x-large, 24px);
+  background-color: var(--ads-color-surface-bg, #ffffff);
+  border: var(--ads-size-border, 1px) solid var(--ads-color-border-secondary, rgba(0, 0, 0, 0.05));
+  border-radius: 24px;
+}
+
+/* 텍스트 입력 영역 */
+.ads-prompt-input__textarea {
+  width: 100%;
+  min-width: 100%;
+  flex-shrink: 0;
+  font-family: var(--ads-font-family-text, 'Instrument Sans', sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ads-color-secondary, rgba(0, 0, 0, 0.5));
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  white-space: pre-wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.ads-prompt-input__textarea::placeholder {
+  color: var(--ads-color-secondary, rgba(0, 0, 0, 0.5));
+}
+
+.ads-prompt-input__textarea:focus {
+  color: var(--ads-color-primary, rgba(0, 0, 0, 0.85));
+}
+
+/* 전송 버튼 (우측 하단) */
+.ads-prompt-input__send-button {
+  position: absolute;
+  bottom: 9px;
+  right: 9px;
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.ads-prompt-input__send-button:hover {
+  transform: scale(1.05);
+}
+
+.ads-prompt-input__send-button:active {
+  transform: scale(0.95);
+}
+
+.ads-prompt-input__send-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.ads-prompt-input__send-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  max-width: none;
+}
+
+.ads-prompt-input__send-icon {
+  position: absolute;
+  inset: 23.81% 23.81% 19.05% 19.05%;
+  overflow: hidden;
+}
+
+.ads-prompt-input__send-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* 첨부 버튼 (좌측 하단) */
+.ads-prompt-input__attach-button {
+  position: absolute;
+  left: 23px;
+  top: 102px;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.ads-prompt-input__attach-button:hover {
+  opacity: 0.7;
+}
+
+.ads-prompt-input__attach-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .ads-prompt-input {
+    width: 100%;
+    max-width: 382px;
+  }
+}
