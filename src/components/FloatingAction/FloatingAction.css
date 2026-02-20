@@ -1,0 +1,77 @@
+/* FloatingAction 컴포넌트 스타일 - Design Tokens 활용 */
+
+.ads-floating-action {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.ads-floating-action:hover {
+  transform: scale(1.05);
+}
+
+.ads-floating-action:active {
+  transform: scale(0.95);
+}
+
+.ads-floating-action--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.ads-floating-action--disabled:hover {
+  transform: none;
+}
+
+/* 배경 원형 */
+.ads-floating-action__background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  aspect-ratio: 1 / 1;
+}
+
+.ads-floating-action__background img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* 아이콘 영역 */
+.ads-floating-action__icon {
+  position: absolute;
+  inset: 23.81% 23.81% 19.05% 19.05%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--ads-color-on-brand, #ffffff);
+}
+
+.ads-floating-action__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .ads-floating-action:hover {
+    transform: none;
+  }
+
+  .ads-floating-action:active {
+    transform: scale(0.95);
+  }
+}

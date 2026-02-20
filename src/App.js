@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles, PromptInput } from './components';
+import { Button, InputField, SelectField, Badge, SidebarNavigation, Bubbles, PromptInput, FloatingAction } from './components';
 import './tokens/design-tokens.css';
 import './App.css';
 
@@ -287,6 +287,41 @@ function App() {
             <h3>인터랙티브 예시</h3>
             <p>현재 입력된 텍스트: <strong>{promptValue || '(비어있음)'}</strong></p>
             <p>전송 버튼(우측)과 첨부 버튼(좌측)을 클릭해보세요!</p>
+          </div>
+        </section>
+
+        {/* FloatingAction 컴포넌트 */}
+        <section className="component-section">
+          <h2>FloatingAction 컴포넌트</h2>
+          
+          <div className="demo-group">
+            <h3>기본 플로팅 액션 버튼</h3>
+            <div className="demo-row">
+              <FloatingAction onClick={() => alert('전송!')} />
+              <FloatingAction onClick={() => console.log('Send')} size={20} />
+              <FloatingAction onClick={() => console.log('Send')} size={18} />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>비활성화 상태</h3>
+            <div className="demo-row">
+              <FloatingAction disabled />
+              <FloatingAction disabled size={20} />
+            </div>
+          </div>
+
+          <div className="demo-group">
+            <h3>인터랙티브 예시</h3>
+            <div className="demo-row">
+              <FloatingAction 
+                onClick={() => {
+                  console.log('Message sent!');
+                  alert('메시지가 전송되었습니다!');
+                }} 
+              />
+            </div>
+            <p>버튼을 클릭하면 메시지가 전송됩니다.</p>
           </div>
         </section>
 
